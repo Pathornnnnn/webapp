@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <style>
-      /* โทนสีธีมอบอุ่น เน้นเขียวอ่อนและน้ำตาล */
       body {
         background: #f0f7f4;
         color: #2f4f4f;
@@ -17,9 +16,8 @@
         padding-top: 80px;
       }
 
-      /* Navbar */
       .navbar {
-        background-color: #4a7c59; /* เขียวเข้ม */
+        background-color: #4a7c59;
       }
       .navbar-brand,
       .navbar-nav .nav-link {
@@ -29,10 +27,9 @@
       }
       .navbar-nav .nav-link:hover,
       .navbar-nav .nav-link.active {
-        color: #d1c4a1; /* น้ำตาลทองอ่อน */
+        color: #d1c4a1;
       }
 
-      /* Section */
       section {
         padding: 80px 15px;
         min-height: 80vh;
@@ -47,7 +44,6 @@
         box-shadow: 0 8px 25px rgb(0 0 0 / 0.15);
       }
 
-      /* Headings */
       h2 {
         color: #3b5a40;
         margin-bottom: 20px;
@@ -63,7 +59,6 @@
         color: #455a64;
       }
 
-      /* Responsive Typography */
       @media (max-width: 768px) {
         h2 {
           font-size: 1.6rem;
@@ -73,12 +68,10 @@
         }
       }
 
-      /* Scroll behavior smooth */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Adjust navbar collapse */
       .navbar-toggler {
         border-color: #d1c4a1;
       }
@@ -93,7 +86,6 @@
     data-bs-offset="80"
     tabindex="0"
   >
-    <!-- Navbar -->
     <nav id="navbar-example" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">อาหารต้านมะเร็ง</a>
@@ -136,73 +128,103 @@
       </div>
     </nav>
 
-    <!-- Content -->
     <main class="container">
       <section id="broccoli" class="shadow-sm">
         <h2>1. บรอกโคลี</h2>
+        <div class="text-center">
+          <img
+          src="https://media.gettyimages.com/id/1349554982/photo/fresh-raw-broccoli-in-bowl-on-rustic-table.jpg?s=612x612&w=gi&k=20&c=v5lcgdvVp49_KKYI9ne0ZnRsUs1oUzgjN_v4xLIY8ew="
+          alt="บรอกโคลี"
+          class="img-fluid center rounded"
+          />
+        </div>
         <p>
           บรอกโคลีมีสารซัลโฟราเฟน (sulforaphane)
           ซึ่งช่วยลดการเติบโตของเซลล์มะเร็งบางชนิด
           และเสริมการทำงานของเอนไซม์ล้างพิษในร่างกาย
         </p>
-        <div class="text-center">
-          <img
-            src="https://media.gettyimages.com/id/1349554982/photo/fresh-raw-broccoli-in-bowl-on-rustic-table.jpg?s=612x612&w=gi&k=20&c=v5lcgdvVp49_KKYI9ne0ZnRsUs1oUzgjN_v4xLIY8ew="
-            alt="บรอกโคลี"
-            class="img-fluid center rounded"
-          />
-        </div>
     </section>
     
     <section id="garlic" class="shadow-sm">
         <h2>2. กระเทียม</h2>
+        <div class="text-center">
+          <img
+          src="https://img.freepik.com/free-vector/realistic-set-with-half-head-garlic-peeled-cloves-chopped-slices_1441-2116.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="กระเทียม"
+          class="img-fluid center rounded"
+          />
+        </div>
         <p>
             อัลลิซิน (allicin) ในกระเทียมมีคุณสมบัติต้านมะเร็ง
             ลดความเสี่ยงมะเร็งกระเพาะอาหารและลำไส้ใหญ่
         </p>
+      </section>
+      
+      <section id="berries" class="shadow-sm">
+        <h2>3. เบอร์รี่</h2>
         <div class="text-center">
+
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUN2vO6Vg8QMgUfM4fhOmisO3M4GQNulmQ4Q&s"
-            alt="บรอกโคลี"
+            src="https://img.freepik.com/premium-photo/fresh-berries-set_770606-2954.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="เบอร์รี่"
             class="img-fluid center rounded"
           />
         </div>
-      </section>
-
-      <section id="berries" class="shadow-sm">
-        <h2>3. เบอร์รี่</h2>
         <p>
           อุดมด้วยสารต้านอนุมูลอิสระ เช่น แอนโทไซยานิน (anthocyanins)
           ที่ช่วยชะลอความเสื่อมของเซลล์
         </p>
       </section>
-
+      
       <section id="tomato" class="shadow-sm">
         <h2>4. มะเขือเทศ</h2>
+        <div class="text-center">
+          <img
+            src="https://s.isanook.com/he/0/ud/6/32153/tomatoes.jpg?ip/crop/w670h402/q80/jpg"
+            alt="มะเขือเทศ"
+            class="img-fluid center rounded"
+          />
+          
+        </div>
         <p>
           มีไลโคปีน (lycopene) สูง
           ช่วยป้องกันมะเร็งต่อมลูกหมากและลดการอักเสบในร่างกาย
         </p>
       </section>
-
+      
       <section id="green-tea" class="shadow-sm">
         <h2>5. ชาเขียว</h2>
+        <img
+          src="https://image.makewebcdn.com/makeweb/m_1920x0/qeb9oj2Lg/Ingradian/shutterstock_1110029888.jpg"
+          alt="ชาเขียว"
+          class="img-fluid center rounded"
+        />
         <p>
           อุดมด้วยโพลีฟีนอล (polyphenols) โดยเฉพาะ EGCG
           ที่มีฤทธิ์ยับยั้งการเติบโตของเซลล์มะเร็ง
         </p>
       </section>
-
+      
       <section id="turmeric" class="shadow-sm">
         <h2>6. ขมิ้นชัน</h2>
+        <img
+          src="https://f.btwcdn.com/store-46240/blog_image/15902/57e3bd99-d72f-4e33-89ec-661f51bf231e.jpg"
+          alt="ขมิ้นชัน"
+          class="img-fluid center rounded"
+        />
         <p>
           เคอร์คูมิน (curcumin)
           ช่วยลดการอักเสบและมีฤทธิ์ต่อต้านเซลล์มะเร็งโดยตรง
         </p>
       </section>
-
+      
       <section id="leafy" class="shadow-sm">
         <h2>7. ผักใบเขียวเข้ม</h2>
+        <img
+          src="https://www.lemon8-app.com/seo/image?item_id=7244861896539603457&index=3&sign=681a6a7ab6c173010408bcc987e0f49b"
+          alt="ผักใบเขียวเข้ม"
+          class="img-fluid center rounded"
+        />
         <p>
           ผักโขม คะน้า และผักปวยเล้ง มีไฟเบอร์สูง
           ช่วยล้างสารพิษและส่งเสริมภูมิคุ้มกัน
