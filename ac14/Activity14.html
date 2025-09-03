@@ -27,7 +27,7 @@
         ManU: "https://images.unsplash.com/photo-1557778358-9fb87328a7db?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       };
       const img_default =
-        "https://www.sciencing.com/sciencing/characteristics-zebra-8001369/153717005.jpg";
+        "https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/540924566_24448065891494323_1536968951262939741_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeExyYU609aiuNpwbPQRp2tsEO2UkUrgbrMQ7ZSRSuBus1LePcMa5TpZVPKBDlU4bG1OvYYLoayy_NILv4Wg2yO1&_nc_ohc=cynXjyv0o1UQ7kNvwFMW-XK&_nc_oc=AdnckvmdeGW0_bXt1yBxQ0ebS1N8nHbgmuut72VrSu_5BCWUiQq3QhaGT90VCRxAKl0&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=64bNPy3N6hhM0Ax7JQ14eg&oh=00_AfYiLol9CyiSk5W8BxqFwHRI9EPphBwK6vq6JagezKwdiA&oe=68BDB5F7";
 
       const w = new Worker("worker.js");
 
@@ -100,7 +100,7 @@
       aElement.textContent = "Personal Info";
       aElement.style.marginTop = "500px";
       aElement.onmouseover = () => {
-        aElement.style.backgroundColor = "Pink";
+        aElement.style.backgroundColor = "Yellow";
       };
       aElement.onmouseout = () => {
         aElement.style.backgroundColor = "transparent";
@@ -145,8 +145,7 @@
 
       let img = document.createElement("img");
       img.src = img_default;
-      img.width = 400;
-      img.height = 400;
+      img.width = 980;
       img.alt = "Description of the image";
       div3.appendChild(img);
 
