@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      const mainContainer = document.getElementById("maincontainer");
+      mainContainer.style.position = "absolute";
+
+      let btnStatus = false;
+      let infoStatus = false;
+      let intervalID = null;
+      let colorIndex = 0;
+      const colors = ["red", "green", "blue", "orange", "purple", "teal"];
+      const myInfo = [
+        "name&surname of student : Pathorn Somsaen, ID :67015105",
+        "Subject : Web Application Development",
+        "Semester: 2/1",
+      ];
+      const myItems = {
+        Earth:
+          "https://images.unsplash.com/photo-1755024324097-64832c4d2334?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        Ronaldo:
+          "https://images.unsplash.com/photo-1724064710352-3cbcee4bc3a8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        Messi:
+          "https://images.unsplash.com/photo-1671016233853-5db7def7ff76?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        ManU: "https://images.unsplash.com/photo-1557778358-9fb87328a7db?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      };
+      const img_default =
+        "https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/540924566_24448065891494323_1536968951262939741_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeExyYU609aiuNpwbPQRp2tsEO2UkUrgbrMQ7ZSRSuBus1LePcMa5TpZVPKBDlU4bG1OvYYLoayy_NILv4Wg2yO1&_nc_ohc=cynXjyv0o1UQ7kNvwFMW-XK&_nc_oc=AdnckvmdeGW0_bXt1yBxQ0ebS1N8nHbgmuut72VrSu_5BCWUiQq3QhaGT90VCRxAKl0&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=64bNPy3N6hhM0Ax7JQ14eg&oh=00_AfYiLol9CyiSk5W8BxqFwHRI9EPphBwK6vq6JagezKwdiA&oe=68BDB5F7";
+
+      const w = new Worker("worker.js");
+
+      const div1 = document.createElement("div");
+      const h1Element = document.createElement("h1");
+      h1Element.textContent = "Exercise 04: JavaScript & DOM";
+      div1.appendChild(h1Element);
+      mainContainer.appendChild(div1);
+
+      const div2 = document.createElement("div");
+      div2.style.height = "21px";
+      div2.style.width = "346px";
+
+      const myButton = document.createElement("input");
+      myButton.type = "button";
+      myButton.value = "Click me to display Date and Time";
+
+      let placeholder = null;
+
+      myButton.onclick = function () {
+        btnStatus = !btnStatus;
+        if (btnStatus) {
+          const btnRect = myButton.getBoundingClientRect();
+          placeholder = document.createElement("div");
+          placeholder.style.width = btnRect.width + "px";
+          placeholder.style.height = btnRect.height + "px";
+          placeholder.style.display = "inline-block";
+          div2.appendChild(placeholder);
+
+          document.body.appendChild(myButton);
+          myButton.style.position = "fixed";
+          myButton.style.top = "0";
+          myButton.style.right = "0";
+          myButton.style.zIndex = "1000";
+
+          w.postMessage("start");
+          w.onmessage = function (msg) {
+            colorIndex = (colorIndex + 1) % colors.length;
+            myButton.style.backgroundColor = colors[colorIndex];
+            myButton.value = msg.data;
+          };
+        } else {
+          myButton.style.position = "";
+          myButton.style.top = "";
+          myButton.style.right = "";
+          myButton.style.zIndex = "";
+          myButton.style.backgroundColor = colors[colorIndex];
+          div2.insertBefore(myButton, placeholder);
+          div2.removeChild(placeholder);
+          placeholder = null;
+          w.postMessage("stop");
+        }
+      };
+      div2.appendChild(myButton);
+      mainContainer.appendChild(div2);
+
+      const div3 = document.createElement("div");
+      const newBr = document.createElement("br");
+      newBr.style.margin = 0;
+      newBr.style.padding = 0;
+      div3.appendChild(newBr);
+
+      const newBr2 = document.createElement("br");
+      newBr2.style.margin = 0;
+      newBr2.style.padding = 0;
+      div3.appendChild(newBr2);
+
+      const aElement = document.createElement("a");
+      aElement.href = "#";
+      aElement.textContent = "Personal Info";
+      aElement.style.marginTop = "500px";
+      aElement.onmouseover = () => {
+        aElement.style.backgroundColor = "Yellow";
+      };
+      aElement.onmouseout = () => {
+        aElement.style.backgroundColor = "transparent";
+      };
+      aElement.onclick = () => {
+        infoStatus = !infoStatus;
+        ul.style.display = infoStatus ? "block" : "none";
+      };
+      div3.appendChild(aElement);
+
+      const ul = document.createElement("ul");
+      ul.id = "info_ul";
+      ul.style.display = "none";
+      myInfo.forEach((itemText) => {
+        const li = document.createElement("li");
+        const pElement = document.createElement("p");
+        pElement.textContent = itemText;
+        li.appendChild(pElement);
+        ul.appendChild(li);
+      });
+      div3.appendChild(ul);
+
+      const h2Element = document.createElement("h2");
+      h2Element.textContent = "Snapshots";
+      div3.appendChild(h2Element);
+
+      const ul1 = document.createElement("ul");
+      ul1.id = "Snapshots_ul";
+      for (const [key, value] of Object.entries(myItems)) {
+        const li = document.createElement("li");
+        const aElement = document.createElement("a");
+        aElement.textContent = key;
+        aElement.href = "#";
+        aElement.onclick = (event) => {
+          event.preventDefault();
+          img.src = value;
+        };
+        li.appendChild(aElement);
+        ul1.appendChild(li);
+      }
+      div3.appendChild(ul1);
+
+      let img = document.createElement("img");
+      img.src = img_default;
+      img.width = 980;
+      img.alt = "Description of the image";
+      div3.appendChild(img);
+
+      mainContainer.appendChild(div3);
+    </script>
+  </body>
+</html>
