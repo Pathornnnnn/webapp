@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: grey;
+  column-gap: 10px;
+}
+
+.Menudiv {
+  margin-top: 5px;
+}
+
+.title h1 {
+  color: yellow;
+  text-align: center;
+}
