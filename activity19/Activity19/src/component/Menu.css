@@ -1,0 +1,68 @@
+<<<<<<< HEAD
+=======
+.Menudiv {
+  min-height: 300px;
+  width: 500px;
+  border: 1px;
+  border-color: black;
+  border-radius: 2%;
+  border-style: solid;
+  background-color: cornsilk;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.text {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.image img {
+  margin-right: 20px;
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  border: 1px;
+  border-color: black;
+  border-radius: 5%;
+  border-style: solid;
+  background-color: cornsilk;
+}
+
+p {
+  max-width: 300px;   /* จำกัดความกว้างสูงสุด */
+  word-wrap: break-word; /* ถ้ามีคำยาวเกิน ให้ตัด */
+  overflow-wrap: break-word; /* modern replacement */
+  white-space: normal; /* ให้ข้อความขึ้นบรรทัดใหม่ได้ */
+
+  font-size: 0.85rem;          /* ทำให้ฟอนต์เล็กลง */
+  font-weight: 300;            /* ทำให้ตัวอักษรบาง */
+  color: #666;                 /* ใช้สีเทาให้อ่านง่ายแต่ไม่เด่น */
+  line-height: 1.4;            /* เว้นบรรทัดให้พอดี */
+}
+.bottom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+button {
+  padding: 3px;
+  height: 35px;
+}
+
+.bottom h2 {
+  border: 2px;
+  padding: 2%;
+  border-color: black;
+  border-radius: 10%;
+  border-style: solid;
+  color: purple;
+  background-color: rgb(30, 255, 30);
+}
+>>>>>>> a813f5e (fix relative css)
